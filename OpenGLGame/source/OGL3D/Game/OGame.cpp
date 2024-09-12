@@ -30,3 +30,4 @@ void OGame::quit()
 {
 	isRunning = false;
 }
+
