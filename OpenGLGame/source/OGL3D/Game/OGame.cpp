@@ -4,17 +4,16 @@
 
 OGame::OGame()
 {
-	display = new OWindow();
+	display = std::unique_ptr<OWindow>(new OWindow());
 }
 
 OGame::~OGame()
 {
-	delete display;
 }
 
 void OGame::run()
 {
-	while (isRunning)
+	while (isRunning && !display->isClosed())
 	{
 		MSG msg;
 		if (PeekMessage(&msg, NULL, NULL, NULL, PM_REMOVE))

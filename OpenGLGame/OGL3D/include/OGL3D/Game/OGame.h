@@ -1,5 +1,5 @@
 #pragma once
-
+#include <memory>
 
 
 class OWindow;
@@ -14,6 +14,6 @@ public:
 	void quit();
 protected:
 	bool isRunning = true;
-	OWindow* display = nullptr;
+	std::unique_ptr<OWindow> display = nullptr;
 };
 
